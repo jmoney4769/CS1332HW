@@ -80,6 +80,7 @@ public class LinkedListTest {
 	
 	/**
 	 * @author Adam Yost
+	 * he made everything below this comment
 	 */
 	@Test
 	//@Worth(5) // these annotations are used by us to determine how much a method is worth
