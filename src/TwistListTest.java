@@ -11,13 +11,16 @@ import org.junit.Test;
  */
 public class TwistListTest {
 
-	public TwistList<Integer> addElements() {
-		
-		TwistList<Integer> list = new TwistList<Integer>();
-		ArrayList<Integer> ints = new ArrayList<Integer>();
+	public TwistList<String> addElements() {
+		TwistList<String> list = new TwistList<String>();
+		ArrayList<String> ints = new ArrayList<String>();
 		for (int i = 1; i < 10; i += 2)
-			ints.add(i);
+			ints.add(i + "");
 		list.addAll(ints);
+		list.reverse(0, 2);
+		list.reverse(1, 3);
+		list.reverse(2, 3);
+		list.reverse(3, 4);
 		return list;
 	}
 	/**
@@ -26,14 +29,16 @@ public class TwistListTest {
 	@Test
 	public void testAdd() {
 		
-		TwistList<Integer> list = addElements();
-		list.add(0);
-		list.add(4);
-		list.add(12);
+		TwistList<String> list = addElements();
 		
-		assertEquals(new Integer(0), list.get(0)); // beginning
-		assertEquals(new Integer(4), list.get(3)); // middle
-		assertEquals(new Integer(12), list.get(list.size() - 1)); // end
+		list.add("0");
+		assertEquals(new String("0"), list.get(0)); // beginning
+		
+		list.add("4");
+		assertEquals(new String("4"), list.get(0)); // middle
+		
+		list.add("12");
+		assertEquals(new String("12"), list.get(0)); // end
 	}
 
 	/**
@@ -41,7 +46,7 @@ public class TwistListTest {
 	 */
 	@Test
 	public void testReverse() {
-		TwistList<Integer> list = addElements();
+		TwistList<String> list = addElements();
 		
 		list.reverse(1, 2); // even number of elements
 		assertEquals("[ 1 5 3 7 9 ]", list.toString());
@@ -57,7 +62,7 @@ public class TwistListTest {
 	@Test
 	public void testFlipFlop() {
 		
-		TwistList<Integer> list = addElements();
+		TwistList<String> list = addElements();
 		
 		// original list [1 3 5 7 9]
 		list.flipFlop(1);
@@ -70,7 +75,7 @@ public class TwistListTest {
 	@Test
 	public void testSwing() {
 		
-		TwistList<Integer> list = addElements();
+		TwistList<String> list = addElements();
 		
 		// original list [1 3 5 7 9]
 		list.swing(2);
