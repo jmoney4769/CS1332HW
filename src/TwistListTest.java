@@ -54,6 +54,10 @@ public class TwistListTest {
 		assertEquals("[ 9 7 3 5 1 ]", list.toString());
 		list.reverse(1, 3); // odd number of elements
 		assertEquals("[ 9 5 3 7 1 ]", list.toString());
+		list.reverse(0, list.size() - 2); // beginning to some point
+		assertEquals("[ 7 3 5 9 1 ]", list.toString());
+		list.reverse(1, list.size() - 1); // some point to the end
+		assertEquals("[ 9 1 7 3 5 ]", list.toString());
 	}
 
 	/**
