@@ -39,7 +39,14 @@ public class BSTTest {
 		
 		tree.remove(50); // two children
 		assertEquals(25, (int) tree.getRoot().getData());
-		//TODO add case for replacing node with two children with one that has one child
+		
+		tree = buildTree(); // two children being replaced with a node that has a child 
+		// should work the same as one child being replaced with a node that has a child
+		tree.add(37);
+		tree.add(31);
+		tree.remove(50);
+		assertEquals(37, (int) tree.getRoot().getData());
+		assertEquals(31, (int) tree.getRoot().getLeft().getRight().getData());
 	}
 
 	/**
@@ -120,7 +127,7 @@ public class BSTTest {
 		tree.add(46546); // to make sure it is cleared, this will also test a feature of add, when adding something
 		// greater than everything else, but there is a null in the tree
 		
-		tree.reconstruct(preOrder, inOrder);
+		tree.reconstruct(preOrder, inOrder); // this also tests clear for me
 		
 		assertEquals(preOrder, tree.preOrder());
 		assertEquals(inOrder, tree.inOrder());
