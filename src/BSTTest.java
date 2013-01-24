@@ -79,7 +79,16 @@ public class BSTTest {
 	 */
 	@Test
 	public void testInOrder() {
-		fail("Not yet implemented"); // TODO
+		
+		BST<Integer> tree = buildTree();
+		tree.add(37);
+		tree.add(56);
+		java.util.List<Integer> list = tree.inOrder(); 
+		String s = "[ ";
+		for (Integer i : list)
+			s += i.toString() + " ";
+		s += "]";
+		assertEquals("[ 13 25 37 50 56 75 87 ]", s);
 	}
 
 	/**
@@ -87,7 +96,16 @@ public class BSTTest {
 	 */
 	@Test
 	public void testPostOrder() {
-		fail("Not yet implemented"); // TODO
+		
+		BST<Integer> tree = buildTree();
+		tree.add(37);
+		tree.add(56);
+		java.util.List<Integer> list = tree.postOrder(); 
+		String s = "[ ";
+		for (Integer i : list)
+			s += i.toString() + " ";
+		s += "]";
+		assertEquals("[ 13 37 25 56 87 75 50 ]", s);
 	}
 
 	/**
@@ -95,7 +113,17 @@ public class BSTTest {
 	 */
 	@Test
 	public void testReconstruct() {
-		fail("Not yet implemented"); // TODO
+		
+		BST<Integer> tree = buildTree();
+		tree.add(null); // why not
+		java.util.List<Integer> inOrder = tree.inOrder(), preOrder = tree.preOrder();
+		tree.add(46546); // to make sure it is cleared, this will also test a feature of add, when adding something
+		// greater than everything else, but there is a null in the tree
+		
+		tree.reconstruct(preOrder, inOrder);
+		
+		assertEquals(preOrder, tree.preOrder());
+		assertEquals(inOrder, tree.inOrder());
 	}
 
 }
