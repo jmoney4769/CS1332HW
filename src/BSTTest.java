@@ -37,8 +37,9 @@ public class BSTTest {
 		tree.remove(75); // one child
 		assertEquals(87, (int) tree.getRoot().getRight().getData());
 		
-		tree.remove(50);
+		tree.remove(50); // two children
 		assertEquals(25, (int) tree.getRoot().getData());
+		//TODO add case for replacing node with two children with one that has one child
 	}
 
 	/**
@@ -51,6 +52,8 @@ public class BSTTest {
 		assertEquals(true, tree.contains(50));
 		assertEquals(false, tree.contains(100));
 		assertEquals(false, tree.contains(null));
+		tree.add(null);
+		assertEquals(true, tree.contains(null));
 		assertEquals(true, tree.contains(13));
 	}
 
@@ -59,7 +62,16 @@ public class BSTTest {
 	 */
 	@Test
 	public void testPreOrder() {
-		fail("Not yet implemented"); // TODO
+		
+		BST<Integer> tree = buildTree();
+		tree.add(37);
+		tree.add(56);
+		java.util.List<Integer> list = tree.preOrder(); // there is already a list class in my project (I use one project for all the homework files)
+		String s = "[ ";
+		for (Integer i : list)
+			s += i.toString() + " ";
+		s += "]";
+		assertEquals("[ 50 25 13 37 75 56 87 ]", s);
 	}
 
 	/**
