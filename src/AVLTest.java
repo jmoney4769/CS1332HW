@@ -27,7 +27,7 @@ public class AVLTest {
 	 * Test method for {@link AVL#add(java.lang.Comparable)}.
 	 */
 	@Test
-	public void testAdd() {
+	public void testRightHeavy() {
 		AVL<Integer> tree = new AVL<Integer>();
 		tree.add(25); // right heavy case
 		tree.add(13);
@@ -41,10 +41,13 @@ public class AVLTest {
 		assertEquals((int) tree.getRoot().getLeft().getLeft().getData(), 13);
 		assertEquals((int) tree.getRoot().getLeft().getRight().getData(), 37);
 		assertEquals((int) tree.getRoot().getRight().getRight().getData(), 90);
-
-		tree.clear();
-
-		tree.add(75); // left heavy case
+	}
+	
+	@Test
+	public void testLeftHeavy() {
+		
+		AVL<Integer> tree = new AVL<Integer>();
+		tree.add(75);
 		tree.add(90);
 		tree.add(50);
 		tree.add(37);
@@ -56,10 +59,13 @@ public class AVLTest {
 		assertEquals((int) tree.getRoot().getLeft().getLeft().getData(), 13);
 		assertEquals((int) tree.getRoot().getLeft().getRight().getData(), 37);
 		assertEquals((int) tree.getRoot().getRight().getRight().getData(), 90);
-
-		tree.clear();
+	}
+	
+	@Test
+	public void testLeftRightHeavy() {
 		
-		tree.add(50); // left-right heavy case
+		AVL<Integer> tree = new AVL<Integer>();
+		tree.add(50);
 		tree.add(75);
 		tree.add(25);
 		tree.add(13);
@@ -71,10 +77,13 @@ public class AVLTest {
 		assertEquals((int) tree.getRoot().getLeft().getLeft().getData(), 13);
 		assertEquals((int) tree.getRoot().getLeft().getRight().getData(), 30);
 		assertEquals((int) tree.getRoot().getRight().getRight().getData(), 75);
+	}
+	
+	@Test
+	public void testRightLeftHeavy() {
 		
-		tree.clear();
-		
-		tree.add(25); // right-left heavy case
+		AVL<Integer> tree = new AVL<Integer>();
+		tree.add(25); 
 		tree.add(13);
 		tree.add(50);
 		tree.add(75);
