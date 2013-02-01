@@ -50,14 +50,14 @@ public class AVLTest {
 		tree.add(75);
 		tree.add(90);
 		tree.add(50);
-		tree.add(37);
+		tree.add(60);
 		tree.add(25);
 		tree.add(13);
 		assertEquals(50, (int) tree.getRoot().getData());
 		assertEquals(25, (int) tree.getRoot().getLeft().getData());
 		assertEquals(75, (int) tree.getRoot().getRight().getData());
 		assertEquals(13, (int) tree.getRoot().getLeft().getLeft().getData());
-		assertEquals(37, (int) tree.getRoot().getLeft().getRight().getData());
+		assertEquals(60, (int) tree.getRoot().getLeft().getRight().getData());
 		assertEquals(90, (int) tree.getRoot().getRight().getRight().getData());
 	}
 	
