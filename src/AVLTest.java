@@ -19,11 +19,11 @@ public class AVLTest {
 		array.add(87);
 		AVL<Integer> tree = new AVL<Integer>();
 		tree.addAll(array); // note that my addAll will call add
-		assertEquals((int) tree.getRoot().getData(), 50);
-		assertEquals((int) tree.getRoot().getLeft().getData(), 25);
-		assertEquals((int) tree.getRoot().getRight().getData(), 75);
-		assertEquals((int) tree.getRoot().getLeft().getLeft().getData(), 13);
-		assertEquals((int) tree.getRoot().getRight().getRight().getData(), 87);
+		assertEquals(50, (int) tree.getRoot().getData());
+		assertEquals(25, (int) tree.getRoot().getLeft().getData());
+		assertEquals(75, (int) tree.getRoot().getRight().getData());
+		assertEquals(13, (int) tree.getRoot().getLeft().getLeft().getData());
+		assertEquals(87, (int) tree.getRoot().getRight().getRight().getData());
 	}
 
 	/**
