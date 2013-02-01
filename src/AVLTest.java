@@ -80,6 +80,30 @@ public class AVLTest {
 	}
 	
 	@Test
+	public void testSimpleRightLeft() {
+		AVL<Integer> tree = new AVL<Integer>();
+		tree.add(50);
+		tree.add(75);
+		tree.add(60);
+		
+		assertEquals(60, (int) tree.getRoot().getData());
+		assertEquals(75, (int) tree.getRoot().getRight().getData());
+		assertEquals(50, (int) tree.getRoot().getLeft().getData());
+	}
+	
+	@Test
+	public void testSimpleLeftRight() {
+		AVL<Integer> tree = new AVL<Integer>();
+		tree.add(50);
+		tree.add(25);
+		tree.add(37);
+		
+		assertEquals(37, (int) tree.getRoot().getData());
+		assertEquals(25, (int) tree.getRoot().getLeft().getData());
+		assertEquals(50, (int) tree.getRoot().getRight().getData());
+	}
+	
+	@Test
 	public void testRightLeftHeavy() {
 		
 		AVL<Integer> tree = new AVL<Integer>();
@@ -88,21 +112,13 @@ public class AVLTest {
 		tree.add(50);
 		tree.add(75);
 		tree.add(37);
-		tree.add(30);
+		tree.add(38);
 		assertEquals(37, (int) tree.getRoot().getData());
 		assertEquals(25, (int) tree.getRoot().getLeft().getData());
 		assertEquals(50, (int) tree.getRoot().getRight().getData());
 		assertEquals(13, (int) tree.getRoot().getLeft().getLeft().getData());
-		assertEquals(30, (int) tree.getRoot().getLeft().getRight().getData());
+		assertEquals(38, (int) tree.getRoot().getRight().getLeft().getData());
 		assertEquals(75, (int) tree.getRoot().getRight().getRight().getData());
-	}
-
-	/**
-	 * Test method for {@link AVL#remove(java.lang.Comparable)}.
-	 */
-	@Test
-	public void testRemove() {
-		fail("Not yet implemented"); // TODO
 	}
 
 	/**
