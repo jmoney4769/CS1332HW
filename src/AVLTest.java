@@ -2,7 +2,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import org.junit.Test;
 
-/** Test case for AVL tree
+/**
+ * Test case for AVL tree
+ * 
  * @author Jared Moore
  * @author edited by Steven Han
  * @version Jan 31, 2013
@@ -86,7 +88,7 @@ public class AVLTest {
 	public void testRightLeftHeavy() {
 
 		AVL<Integer> tree = new AVL<Integer>();
-		tree.add(25); 
+		tree.add(25);
 		tree.add(13);
 		tree.add(50);
 		tree.add(75);
@@ -164,7 +166,7 @@ public class AVLTest {
 		tree.remove(5);
 		tree.remove(8);
 		tree.remove(null);
-
+		tree.contains(3);
 		assertEquals(false, tree.contains(3));
 		assertEquals(false, tree.contains(50));
 		assertEquals(false, tree.contains(8));
@@ -172,9 +174,9 @@ public class AVLTest {
 	}
 
 	@Test
-	public void testRemoveEdgeCase1(){
+	public void testRemoveEdgeCase1() {
 		AVL<Integer> tree = new AVL<Integer>();
-		tree.add(25); 
+		tree.add(25);
 		tree.add(13);
 		tree.add(50);
 
@@ -183,10 +185,10 @@ public class AVLTest {
 	}
 
 	@Test
-	public void testRemoveEdgeCase2(){
+	public void testRemoveEdgeCase2() {
 		AVL<Integer> tree = new AVL<Integer>();
 		tree.add(13);
-		tree.add(25); 
+		tree.add(25);
 		tree.add(50);
 
 		tree.remove(25);
@@ -195,9 +197,9 @@ public class AVLTest {
 	}
 
 	@Test
-	public void testRemoveEdgeCase3(){
+	public void testRemoveEdgeCase3() {
 		AVL<Integer> tree = new AVL<Integer>();
-		tree.add(25); 
+		tree.add(25);
 		tree.add(13);
 
 		tree.add(50);
@@ -210,7 +212,7 @@ public class AVLTest {
 	}
 
 	@Test
-	public void testRemoveEdgeCase4(){
+	public void testRemoveEdgeCase4() {
 		AVL<Integer> tree = new AVL<Integer>();
 		tree.add(null);
 
@@ -220,7 +222,7 @@ public class AVLTest {
 	}
 
 	@Test
-	public void testRemoveBossCase(){
+	public void testRemoveBossCase() {
 		AVL<Integer> tree = new AVL<Integer>();
 		for (int i = 0; i < 100; i++)
 			tree.add(i);
@@ -252,7 +254,7 @@ public class AVLTest {
 		assertEquals(false, tree.contains(11));
 		assertEquals(false, tree.contains(50));
 
-		//random test cases
+		// random test cases
 		assertEquals(true, tree.contains(3));
 		assertEquals(true, tree.contains(2));
 		assertEquals(true, tree.contains(9));
