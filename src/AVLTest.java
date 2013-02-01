@@ -57,7 +57,7 @@ public class AVLTest {
 		assertEquals(25, (int) tree.getRoot().getLeft().getData());
 		assertEquals(75, (int) tree.getRoot().getRight().getData());
 		assertEquals(13, (int) tree.getRoot().getLeft().getLeft().getData());
-		assertEquals(60, (int) tree.getRoot().getLeft().getRight().getData());
+		assertEquals(60, (int) tree.getRoot().getRight().getLeft().getData());
 		assertEquals(90, (int) tree.getRoot().getRight().getRight().getData());
 	}
 	
