@@ -2,7 +2,10 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-
+/** Splay Tree Test
+ * @author Jared Moore
+ * @version Feb 11, 2013
+ */
 public class SplayTreeTest {
 	
 	// Simple case tests, make sure these work first
