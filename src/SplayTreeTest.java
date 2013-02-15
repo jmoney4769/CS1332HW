@@ -294,8 +294,4 @@ public class SplayTreeTest {
 		assertEquals(tree.contains(-2), true);
 		assertEquals(tree.contains(-1), true);
 	}
-
-
-
-
 }
