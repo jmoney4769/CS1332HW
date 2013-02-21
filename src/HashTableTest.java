@@ -28,7 +28,7 @@ public class HashTableTest {
 		table.put(2, "two");
 		table.put(3, "three");
 		table.put(4, "four");
-		table.put(1, "one again");
+		table.put(12, "one again");
 
 		assertEquals(
 				"[null, one, two, three, four, one again, null, null, null, null, null]",
@@ -42,13 +42,13 @@ public class HashTableTest {
 		table.put(2, "two");
 		table.put(3, "three");
 		table.put(4, "four");
-		table.put(1, "one again");
+		table.put(12, "one again");
 		table.put(6, "six");
 		table.put(7, "seven");
 		table.put(8, "eight");
 
 		assertEquals(
-				"[null, one, two, three, four, one again, six, seven, eight, null, null, null, null, null, null, null, null, null, null, null, null, null, null]",
+				"[null, one, two, three, four, null, six, seven, eight, null, null, null, one again, null, null, null, null, null, null, null, null, null, null]",
 				table.toString());
 	}
 	
@@ -60,9 +60,9 @@ public class HashTableTest {
 		table.put(2, "two");
 		table.put(3, "three");
 		table.put(4, "four");
-		table.put(1, "one again");
+		table.put(12, "one again");
 		table.put(10, "ten");
-		table.put(10, "ten again");
+		table.put(21, "ten again");
 		
 		assertEquals(
 				"[ten again, one, two, three, four, one again, null, null, null, null, ten]",
@@ -77,12 +77,12 @@ public class HashTableTest {
 		table.put(2, "two");
 		table.put(3, "three");
 		table.put(4, "four");
-		table.put(1, "one again");
+		table.put(12, "one again");
 		table.put(10, "ten");
-		table.put(10, "ten again");
+		table.put(21, "ten again");
 		
 		assertEquals("ten", table.get(10));
-		assertEquals(null, table.get(21)); // same hash value as previous
+		assertEquals("ten again", table.get(21)); // same hash value as previous
 	}
 	
 	@Test
@@ -93,13 +93,13 @@ public class HashTableTest {
 		table.put(2, "two");
 		table.put(3, "three");
 		table.put(4, "four");
-		table.put(1, "one again");
+		table.put(12, "one again");
 		table.put(10, "ten");
-		table.put(10, "ten again");
+		table.put(21, "ten again");
 		table.put(7, null);
 		
 		assertEquals(true, table.containsKey(10));
-		assertEquals(false, table.containsKey(21));
-		assertEquals(true, table.containsKey(null));
+		assertEquals(true, table.containsKey(21));
+		assertEquals(true, table.containsKey(7));
 	}
 }
