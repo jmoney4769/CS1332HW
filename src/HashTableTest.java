@@ -68,4 +68,38 @@ public class HashTableTest {
 				"[ten again, one, two, three, four, one again, null, null, null, null, ten]",
 				table.toString());
 	}
+	
+	@Test
+	public void testGet() {
+		
+		HashTable<Integer, String> table = new HashTable<Integer, String>();
+		table.put(1, "one");
+		table.put(2, "two");
+		table.put(3, "three");
+		table.put(4, "four");
+		table.put(1, "one again");
+		table.put(10, "ten");
+		table.put(10, "ten again");
+		
+		assertEquals("ten", table.get(10));
+		assertEquals(null, table.get(21)); // same hash value as previous
+	}
+	
+	@Test
+	public void testContains() {
+		
+		HashTable<Integer, String> table = new HashTable<Integer, String>();
+		table.put(1, "one");
+		table.put(2, "two");
+		table.put(3, "three");
+		table.put(4, "four");
+		table.put(1, "one again");
+		table.put(10, "ten");
+		table.put(10, "ten again");
+		table.put(7, null);
+		
+		assertEquals(true, table.containsKey(10));
+		assertEquals(false, table.containsKey(21));
+		assertEquals(true, table.containsKey(null));
+	}
 }
