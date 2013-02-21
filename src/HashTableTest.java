@@ -70,6 +70,20 @@ public class HashTableTest {
 	}
 	
 	@Test
+	public void testReplace() {
+		HashTable<Integer, String> table = new HashTable<Integer, String>();
+		table.put(1, "one");
+		table.put(2, "two");
+		table.put(3, "three");
+		table.put(4, "four");
+		assertEquals("one", table.put(1, "one again"));
+
+		assertEquals(
+				"[null, one again, two, three, four, null, null, null, null, null, null]",
+				table.toString());
+	}
+	
+	@Test
 	public void testGet() {
 		
 		HashTable<Integer, String> table = new HashTable<Integer, String>();
