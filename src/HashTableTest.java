@@ -136,6 +136,6 @@ public class HashTableTest {
 		table.remove(5);
 		assertEquals(
 				"[null, hidden, two, three, four, one again, null, null, null, null, null]",
-				table.toString());
+				table.toString()); 
 	}
 }
