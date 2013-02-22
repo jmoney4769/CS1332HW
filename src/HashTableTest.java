@@ -138,4 +138,40 @@ public class HashTableTest {
 				"[null, hidden, two, three, four, one again, hidden, null, null, null, null]",
 				table.toString()); 
 	}
+	
+	@Test
+	public void testValues() {
+		HashTable<Integer, String> table = new HashTable<Integer, String>();
+		table.put(1, "one");
+		table.put(2, "two");
+		table.put(3, "three");
+		table.put(4, "four");
+		table.put(12, "one");
+		
+		assertEquals("[one, two, three, four]", table.values().toString());
+	}
+	
+	@Test
+	public void testKeys() {
+		HashTable<Integer, String> table = new HashTable<Integer, String>();
+		table.put(1, "one");
+		table.put(2, "two");
+		table.put(3, "three");
+		table.put(4, "four");
+		table.put(12, "one"); // You cannot really get duplicates, so that cannot be tested
+		
+		assertEquals("[1, 2, 3, 4, 12]", table.keySet().toString());
+	}
+	
+	@Test
+	public void testEntries() {
+		HashTable<Integer, String> table = new HashTable<Integer, String>();
+		table.put(1, "one");
+		table.put(2, "two");
+		table.put(3, "three");
+		table.put(4, "four");
+		table.put(12, "one");
+		
+		assertEquals(5, table.entrySet().size()); // cannot test order as order is not preserved
+	}
 }
