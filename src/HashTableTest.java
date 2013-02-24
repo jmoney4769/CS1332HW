@@ -148,7 +148,7 @@ public class HashTableTest {
 		table.put(4, "four");
 		table.put(12, "one");
 		
-		assertEquals("[one, two, three, four]", table.values().toString());
+		assertEquals("[one, two, three, four, one]", table.values().toString());
 	}
 	
 	@Test
