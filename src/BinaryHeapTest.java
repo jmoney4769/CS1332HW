@@ -44,6 +44,18 @@ public class BinaryHeapTest {
 		BinaryHeap<Integer> heap = makeSimpleHeap();
 		assertEquals(1, (int) heap.peek());
 	}
+	
+	@Test
+	public void funWithNulls() {
+		BinaryHeap<Integer> heap = makeSimpleHeap();
+		heap.add(null);
+		assertEquals(4, heap.size());
+		heap.remove();
+		heap.remove();
+		heap.remove();
+		heap.remove();
+		assertTrue(heap.isEmpty());
+	}
 
 	/**
 	 * Makes a simple heap
