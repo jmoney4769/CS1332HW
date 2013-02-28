@@ -147,11 +147,13 @@ public class BinaryHeapTest {
 		heap.add(null);
 		heap.add(null);
 		heap.add(5);
+		heap.add(6);
 		Integer array[] = new Integer[11];
 		array[0] = 1;
 		array[1] = 2;
 		array[2] = 3;
 		array[5] = 5;
+		array[6] = 6;
 		assertArrayEquals(array, heap.getData());
 		heap.remove();
 		array[0] = 2;
