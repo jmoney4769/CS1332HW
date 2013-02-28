@@ -60,87 +60,86 @@ public class BinaryHeapTest {
 	@Test
 	public void testLargerAdd() {
 		BinaryHeap<Integer> heap = makeBiggerHeap();
-		Integer array[] = {1, 2, 6, 5, 3, 10, 7, 11, 8, 9, 4};
+		Integer array[] = { 1, 2, 6, 5, 3, 10, 7, 11, 8, 9, 4 };
 		assertArrayEquals(array, heap.getData());
 		assertFalse(heap.isEmpty());
 		assertEquals(11, heap.size());
 	}
-	
+
 	@Test
 	public void testStepByStepEmpty() {
 		BinaryHeap<Integer> heap = makeBiggerHeap();
-		Integer array[] = {1, 2, 6, 5, 3, 10, 7, 11, 8, 9, 4};
+		Integer array[] = { 1, 2, 6, 5, 3, 10, 7, 11, 8, 9, 4 };
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 2;
 		array[1] = 3;
 		array[4] = 4;
 		array[10] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 3;
 		array[1] = 4;
 		array[4] = 9;
 		array[9] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 4;
 		array[1] = 5;
 		array[3] = 8;
 		array[8] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 5;
 		array[1] = 8;
 		array[3] = 11;
 		array[7] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 6;
 		array[2] = 7;
 		array[6] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 7;
 		array[2] = 10;
 		array[5] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 8;
 		array[1] = 9;
 		array[4] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 9;
 		array[1] = 11;
 		array[3] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 10;
 		array[2] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = 11;
 		array[1] = null;
 		assertArrayEquals(array, heap.getData());
-		
+
 		heap.remove();
 		array[0] = null;
 		assertArrayEquals(array, heap.getData());
 		assertTrue(heap.isEmpty());
-		// Note:  This is not completed yet
 	}
-	
+
 	@Test
 	public void testNullsEdge1() {
 		BinaryHeap<Integer> heap = makeSimpleHeap();
@@ -163,16 +162,16 @@ public class BinaryHeapTest {
 		array[6] = null;
 		assertArrayEquals(array, heap.getData());
 	}
-	
+
 	@Test
 	public void testRemoveEmpty() {
 		BinaryHeap<Integer> heap = new BinaryHeap<Integer>();
 		try {
 			heap.remove();
 		} catch (Exception e) {
-			// don't do anything, but also don't stop due to an error
-		}
-		finally {
+			// don't do anything, but also don't stop due to an error that may
+			// or may not be thrown
+		} finally {
 			assertEquals(0, heap.size());
 		}
 	}
