@@ -62,6 +62,71 @@ public class BinaryHeapTest {
 		BinaryHeap<Integer> heap = makeBiggerHeap();
 		Integer array[] = {1, 2, 6, 5, 3, 10, 7, 11, 8, 9, 4};
 		assertArrayEquals(array, heap.getData());
+		assertFalse(heap.isEmpty());
+		assertEquals(11, heap.size());
+	}
+	
+	@Test
+	public void testStepByStepRemove() {
+		BinaryHeap<Integer> heap = makeBiggerHeap();
+		Integer array[] = {1, 2, 6, 5, 3, 10, 7, 11, 8, 9, 4};
+		assertArrayEquals(array, heap.getData());
+		
+		//System.out.println(Arrays.toString(heap.getData()));
+		heap.remove();
+		array[0] = 2;
+		array[1] = 3;
+		array[4] = 4;
+		array[10] = null;
+		//System.out.println(Arrays.toString(heap.getData()));
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		assertArrayEquals(array, heap.getData());
+		
+		heap.remove();
+		array[0] = null;
+		assertArrayEquals(array, heap.getData());
+		assertTrue(heap.isEmpty());
+		
+	}
+	
+	@Test
+	public void testNullsEdge1() {
+		BinaryHeap<Integer> heap = makeSimpleHeap();
+		heap.add(null);
+		heap.add(null);
+		heap.add(5);
+		heap.remove();
+		Integer array[] = new Integer[11];
+		array[0] = 2;
+		array[1] = 5;
+		array[2] = 3;
+		assertArrayEquals(array, heap.getData());
 	}
 
 	/**
