@@ -60,8 +60,7 @@ public class BinaryHeapTest {
 	@Test
 	public void testLargerAdd() {
 		BinaryHeap<Integer> heap = makeBiggerHeap();
-		Integer array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
-		System.out.println(Arrays.toString(heap.getData()));
+		Integer array[] = {1, 2, 6, 5, 3, 10, 7, 11, 8, 9, 4};
 		assertArrayEquals(array, heap.getData());
 	}
 
