@@ -35,7 +35,7 @@ public class BinaryHeapTest {
 		BinaryHeap<Integer> heap = makeSimpleHeap();
 		assertEquals(1, (int) heap.remove());
 		assertEquals(
-				"[2, 3, null, null, null, null, null, null, null, null, null]",
+				"[2, null, 3, null, null, null, null, null, null, null, null]",
 				Arrays.toString(heap.getData()));
 	}
 
