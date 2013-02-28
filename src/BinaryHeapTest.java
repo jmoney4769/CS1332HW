@@ -159,12 +159,26 @@ public class BinaryHeapTest {
 		array[0] = 2;
 		array[1] = 3;
 		array[2] = 5;
-		array[5] = null;
+		array[5] = 6;
+		array[6] = null;
 		assertArrayEquals(array, heap.getData());
+	}
+	
+	@Test
+	public void testRemoveEmpty() {
+		BinaryHeap<Integer> heap = new BinaryHeap<Integer>();
+		try {
+			heap.remove();
+		} catch (Exception e) {
+			// don't do anything, but also don't stop due to an error
+		}
+		finally {
+			assertEquals(0, heap.size());
+		}
 	}
 
 	/**
-	 * Makes a bigger heap (added large to small)
+	 * Makes a bigger heap (added in large to small order)
 	 * 
 	 * @return the heap
 	 */
