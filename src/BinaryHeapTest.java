@@ -112,7 +112,7 @@ public class BinaryHeapTest {
 		array[0] = null;
 		assertArrayEquals(array, heap.getData());
 		assertTrue(heap.isEmpty());
-		
+		// Note:  This is not completed yet
 	}
 	
 	@Test
