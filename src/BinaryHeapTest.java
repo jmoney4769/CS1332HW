@@ -44,7 +44,7 @@ public class BinaryHeapTest {
 		BinaryHeap<Integer> heap = makeSimpleHeap();
 		assertEquals(1, (int) heap.peek());
 	}
-	
+
 	@Test
 	public void funWithNulls() {
 		BinaryHeap<Integer> heap = makeSimpleHeap();
@@ -55,6 +55,26 @@ public class BinaryHeapTest {
 		heap.remove();
 		heap.remove();
 		assertTrue(heap.isEmpty());
+	}
+
+	@Test
+	public void testLargerAdd() {
+		BinaryHeap<Integer> heap = makeBiggerHeap();
+		Integer array[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11};
+		System.out.println(Arrays.toString(heap.getData()));
+		assertArrayEquals(array, heap.getData());
+	}
+
+	/**
+	 * Makes a bigger heap (added large to small)
+	 * 
+	 * @return the heap
+	 */
+	private BinaryHeap<Integer> makeBiggerHeap() {
+		BinaryHeap<Integer> heap = new BinaryHeap<Integer>();
+		for (int i = 11; i > 0; i--)
+			heap.add(i);
+		return heap;
 	}
 
 	/**
@@ -69,4 +89,5 @@ public class BinaryHeapTest {
 		heap.add(3);
 		return heap;
 	}
+
 }
