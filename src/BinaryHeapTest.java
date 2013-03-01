@@ -156,9 +156,7 @@ public class BinaryHeapTest {
 		assertArrayEquals(array, heap.getData());
 		heap.remove();
 		array[0] = 2;
-		array[1] = 3;
-		array[2] = 5;
-		array[5] = 6;
+		array[1] = 6;
 		array[6] = null;
 		assertArrayEquals(array, heap.getData());
 	}
