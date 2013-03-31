@@ -1,0 +1,6 @@
+1 1 2 1#2 1 2 1 3 4 1#3 1 2 1 2 3 5 1 3 2
+
+Information on the strings (only the first line is read by the program:
+1.  Simple, two-vertex graph
+2.  2 sets of two vertices, not connected
+3.  Triangle of vertices
