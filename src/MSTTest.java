@@ -69,4 +69,18 @@ public class MSTTest {
 		assertTrue(edgeList.contains(new Edge(new Vertex(1), new Vertex(2), 1)));
 		assertTrue(edgeList.contains(new Edge(new Vertex(1), new Vertex(3), 2)));
 	}
+	
+	@Test
+	public void testWikipediaExample() {
+		ArrayList<Graph> graphs = makeGraphList();
+		Collection<Edge> edgeList = MST.kruskals(graphs.get(3));
+		assertNotNull(edgeList);
+		assertEquals(6, edgeList.size());
+		assertTrue(edgeList.contains(new Edge(new Vertex(1), new Vertex(2), 7)));
+		assertTrue(edgeList.contains(new Edge(new Vertex(1), new Vertex(4), 5)));
+		assertTrue(edgeList.contains(new Edge(new Vertex(2), new Vertex(5), 7)));
+		assertTrue(edgeList.contains(new Edge(new Vertex(5), new Vertex(3), 5)));
+		assertTrue(edgeList.contains(new Edge(new Vertex(7), new Vertex(5), 9)));
+		assertTrue(edgeList.contains(new Edge(new Vertex(4), new Vertex(6), 6)));
+	}
 }
