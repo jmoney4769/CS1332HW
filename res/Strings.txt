@@ -1,0 +1,6 @@
+FORMAT:  haystack (MUST END WITH '#'), needle(s).  NOTE:  all _'s will be replaced with spaces
+The quick brown fox jumps over the lazy dog# brown Brown e_lazy blue
+Dog dog dog dog dog dog dog dog# dog Dog
+abcdabcabcdabfabcdabcabe# abcdabcabe
+anteaters are aardvarks# aardvarks
+crush kkyle with aardvarks# aardvarks
