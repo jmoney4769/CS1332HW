@@ -22,30 +22,30 @@ public class HuffmanTest {
 	@Test
 	public void testOneLetter() {
 		Node tree = Huffman.buildHuffmanTree(Huffman.buildFrequencyMap(ONE_LETTER));
-		assertEquals(EASY, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), ONE_LETTER)));
+		assertEquals(ONE_LETTER, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), ONE_LETTER)));
 	}
 
 	@Test
 	public void testDouble() {
 		Node tree = Huffman.buildHuffmanTree(Huffman.buildFrequencyMap(DOUBLE));
-		assertEquals(EASY, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), DOUBLE)));
+		assertEquals(DOUBLE, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), DOUBLE)));
 	}
 	
 	@Test
 	public void testSentence() {
 		Node tree = Huffman.buildHuffmanTree(Huffman.buildFrequencyMap(SENTENCE));
-		assertEquals(EASY, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), SENTENCE)));
+		assertEquals(SENTENCE, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), SENTENCE)));
 	}
 	
 	@Test
 	public void testCapitals() {
 		Node tree = Huffman.buildHuffmanTree(Huffman.buildFrequencyMap(CAPITALS));
-		assertEquals(EASY, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), CAPITALS)));
+		assertEquals(CAPITALS, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), CAPITALS)));
 	}
 	
 	@Test
 	public void testSentence2() {
 		Node tree = Huffman.buildHuffmanTree(Huffman.buildFrequencyMap(SENTENCE2));
-		assertEquals(EASY, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), SENTENCE2)));
+		assertEquals(SENTENCE2, Huffman.decode(tree, Huffman.encode(Huffman.buildEncodingMap(tree), SENTENCE2)));
 	}
 }
