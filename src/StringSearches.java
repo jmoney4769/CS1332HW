@@ -16,7 +16,7 @@ public class StringSearches {
 		for (int i = 0; i < needle.length(); i++) {
 			char c = needle.charAt(i);
 			int index = i, temp = 0;
-			if (map[Integer.valueOf(c)] != 0)
+			if (map[(int) c] != 0)
 				continue;
 			while (temp != -1 && needle.indexOf(c) + 1 < needle.length()) {
 				temp = needle.substring(needle.indexOf(c) + 1 + temp,
@@ -26,7 +26,7 @@ public class StringSearches {
 					temp = index;
 				}
 			}
-			map[Integer.valueOf(c)] = (needle.length() - 1 - index > 0) ? needle
+			map[(int) c] = (needle.length() - 1 - index > 0) ? needle
 					.length() - 1 - index
 					: 1;
 		}
@@ -60,8 +60,8 @@ public class StringSearches {
 		while (haystackIndex < haystack.length() - (needle.length() - 1))
 			if (needle.charAt(needleIndex) != haystack.charAt(haystackIndex
 					+ needleIndex)) {
-				haystackIndex += map[Integer.valueOf(haystack
-						.charAt(haystackIndex + needleIndex))];
+				haystackIndex += map[((int) haystack
+                        .charAt(haystackIndex + needleIndex))];
 				needleIndex = needle.length() - 1;
 			} else if (needleIndex == 0) {
 				array.add(haystackIndex);
@@ -139,7 +139,7 @@ public class StringSearches {
 	private static int[] intArrayListToArray(ArrayList<Integer> arrayList) {
 		int matches[] = new int[arrayList.size()];
 		for (int i = 0; i < arrayList.size(); i++)
-			matches[i] = Integer.valueOf(arrayList.get(i));
+			matches[i] = arrayList.get(i);
 		return matches;
 	}
 
